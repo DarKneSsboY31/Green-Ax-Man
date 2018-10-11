@@ -3,7 +3,17 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - AxMan
+  - SpecialMan
+  - Ax
+  - Enemy
+  - Item
+  - Ground
+  - Green
+  - Red
+  - Wall
+  - Goal
   layers:
   - Default
   - TransparentFX
@@ -13,8 +23,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - AxManDamage
+  - Enemy
   - 
   - 
   - 

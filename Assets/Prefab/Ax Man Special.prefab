@@ -23,9 +23,10 @@ GameObject:
   - component: {fileID: 95224004108063278}
   - component: {fileID: 50276778681053564}
   - component: {fileID: 61143422094879414}
+  - component: {fileID: 114927594356848604}
   m_Layer: 0
   m_Name: Ax Man Special
-  m_TagString: Untagged
+  m_TagString: SpecialMan
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38,7 +39,7 @@ Transform:
   m_GameObject: {fileID: 1810255873575932}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.19, y: 0.27, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -105,6 +106,25 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114927594356848604
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1810255873575932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a45ddcd845bee66489b23a01f4276fc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RedAxPrefab: {fileID: 1657281925343732, guid: cb6da94f8a460ef48b15151bc7bfe8fb,
+    type: 2}
+  BlueAxPrefab: {fileID: 1947137925657190, guid: b940c9af88d45954ba1e9d0ac0f89401,
+    type: 2}
+  GreenAxPrefab: {fileID: 1216583752646634, guid: 0ef438851de8bdb459dfcf860b2039f2,
+    type: 2}
+  YellowAxPrefab: {fileID: 1195749075758882, guid: 21df3f02a6103d1488f6f4d13368f9ed,
+    type: 2}
 --- !u!212 &212934703463980342
 SpriteRenderer:
   m_ObjectHideFlags: 1

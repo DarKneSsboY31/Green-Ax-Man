@@ -22,9 +22,11 @@ GameObject:
   - component: {fileID: 212959192432651070}
   - component: {fileID: 95307410903897218}
   - component: {fileID: 61944275498687032}
+  - component: {fileID: 114441433903781996}
+  - component: {fileID: 50355132415183390}
   m_Layer: 0
   m_Name: Yellow Ax
-  m_TagString: Untagged
+  m_TagString: Ax
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37,11 +39,31 @@ Transform:
   m_GameObject: {fileID: 1195749075758882}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.5365527, y: -0.5981541, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &50355132415183390
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1195749075758882}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: -0.3
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!61 &61944275498687032
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -84,6 +106,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114441433903781996
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1195749075758882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a035ce56bb97c640bf31f090971f384, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AxMan: {fileID: 1331920781089734, guid: 25b27616c5b1af0448da372b15b2c815, type: 2}
 --- !u!212 &212959192432651070
 SpriteRenderer:
   m_ObjectHideFlags: 1

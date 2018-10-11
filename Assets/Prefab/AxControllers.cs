@@ -4,44 +4,79 @@ using UnityEngine;
 
 public class AxControllers : MonoBehaviour
 {
-
     //進むスピード
-    private float speed = 3.0f;
-    //Ax Manのアニメーションを取得
-    public Animator AxMans;
-    //AxManを取得
+    private float speed = 0.1f;
+    //AxManとSpecialManを取得
     public GameObject AxMan;
+    //時間
+    private float TimE;
+    //アニメーション用のコンポーネントを入れる
+    private Animator myAnimator;
+
     // Use this for initialization
     void Start()
     {
+        //Ax　Manのオブジェクトを取得
+        AxMan = GameObject.Find("Ax Man");
+
+        //Animatorコンポーネントの取得
+        this.myAnimator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        //AxManが右向きの時、右へ進ませる,左の時は左へ進ませる
-        if (AxMans.GetCurrentAnimatorStateInfo(0).IsName("Base Layer.Ax Man Default"))
+        //生成されてからの時間を設定
+        TimE += Time.deltaTime;
+
+        //AxManが右向きの時、右へ進ませる,左の時は左へ進ませ、左のアニメーション開始する
+        if (this.transform.position.x > AxMan.transform.position.x )
         {
-            this.transform.Translate(speed,0,0);
-            Debug.Log("aaa");
+            if (this.tag =="Green")
+            {
+                this.transform.Translate(speed *2, 0, 0);
+            }
+            else if (this.tag == "Red")
+            {
+                this.transform.Translate(speed * 0.5f, 0, 0);
+            }
+            else
+            {
+                this.transform.Translate(speed, 0, 0);
+            }                    
         }
-        else if (AxMans.GetCurrentAnimatorStateInfo(0).IsName("Base Layer.Walk Re") || AxMans.GetCurrentAnimatorStateInfo(0).IsName("Base Layer.Default Re"))
-        {
-            this.transform.Translate(-speed, 0, 0);
-            Debug.Log("bbb");
+         else if (this.transform.position.x < AxMan.transform.position.x )
+        {          
+            this.myAnimator.SetBool("Left", true);
+            if (this.tag == "Green")
+            {
+                this.transform.Translate(-speed * 2, 0, 0);
+            }
+            else if (this.tag == "Red")
+            {
+                this.transform.Translate(-speed * 0.5f, 0, 0);
+            }
+            else
+            {
+                this.transform.Translate(-speed, 0, 0);
+            }
         }
 
-        //一定の距離を超えたら、消す
-        if (this.transform.position.x > AxMan.transform.position.x + 5)
+        //一定の時間を超えたら、消す
+        if (TimE > 1.0f)
         {
             Destroy(gameObject);
-            Debug.Log("ccc");
         }
-        else if (this.transform.position.x < AxMan.transform.position.x - 5)
-        {
-            Destroy(gameObject);
-            Debug.Log("ddd");
-        }
-
     }
+
+    //何かに接触した時
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        //敵、壁、アイテム、ゴールに当たったら、消える
+        if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "Wall" || collision.gameObject.tag == "Item" || collision.gameObject.tag == "Goal")
+        {
+            Destroy(gameObject);
+        }
+    }
+
 }

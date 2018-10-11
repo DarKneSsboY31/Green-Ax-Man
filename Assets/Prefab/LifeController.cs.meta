@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: 3a035ce56bb97c640bf31f090971f384
+guid: 8da0247d0a223254c8af7cbf36d0c471
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
   - AxMan: {fileID: 1331920781089734, guid: 25b27616c5b1af0448da372b15b2c815, type: 2}
-  - SpecialMan: {fileID: 1810255873575932, guid: dfcd8cdd0ecb1354f9f5a9b6c3ccac75,
+  - AxMancontroller: {fileID: 114038607287045380, guid: 25b27616c5b1af0448da372b15b2c815,
       type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
