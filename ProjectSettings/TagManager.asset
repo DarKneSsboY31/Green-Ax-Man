@@ -12,8 +12,12 @@ TagManager:
   - Ground
   - Green
   - Red
-  - Wall
   - Goal
+  - Strong Enemy
+  - Boss
+  - Strong Boss
+  - Last Boss
+  - Wall
   layers:
   - Default
   - TransparentFX
@@ -25,7 +29,7 @@ TagManager:
   - 
   - AxManDamage
   - Enemy
-  - 
+  - EnemyDamage
   - 
   - 
   - 

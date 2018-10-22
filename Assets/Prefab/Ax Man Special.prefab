@@ -117,14 +117,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a45ddcd845bee66489b23a01f4276fc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RedAxPrefab: {fileID: 1657281925343732, guid: cb6da94f8a460ef48b15151bc7bfe8fb,
-    type: 2}
-  BlueAxPrefab: {fileID: 1947137925657190, guid: b940c9af88d45954ba1e9d0ac0f89401,
-    type: 2}
-  GreenAxPrefab: {fileID: 1216583752646634, guid: 0ef438851de8bdb459dfcf860b2039f2,
-    type: 2}
-  YellowAxPrefab: {fileID: 1195749075758882, guid: 21df3f02a6103d1488f6f4d13368f9ed,
-    type: 2}
 --- !u!212 &212934703463980342
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -158,7 +150,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 01b9843e4ee3bf7468060712c08ec43b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

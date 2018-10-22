@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: a45ddcd845bee66489b23a01f4276fc9
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - AxMan: {fileID: 1331920781089734, guid: 25b27616c5b1af0448da372b15b2c815, type: 2}
+  - AxMancontroller: {fileID: 114038607287045380, guid: 25b27616c5b1af0448da372b15b2c815,
+      type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
