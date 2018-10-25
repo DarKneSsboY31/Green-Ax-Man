@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class EnemyLifeController : MonoBehaviour {
 
-    //AxManを取得
+    //Bossを取得
     public GameObject Boss;
     //AxManControllerを取得
     public FirstBossController FirstBosscontroller;
@@ -20,7 +20,7 @@ public class EnemyLifeController : MonoBehaviour {
     void Start()
     {
 
-        //Ax　Manのオブジェクトを取得
+        //Boss1のオブジェクトを取得
         Boss = GameObject.Find("Boss1");
         //AxManControllerのコンポーネントを取得
         FirstBosscontroller = Boss.GetComponent<FirstBossController>();

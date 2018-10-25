@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 114171969976508348}
   - component: {fileID: 61941737057035808}
   - component: {fileID: 50390228639670582}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: 'Red Ax '
   m_TagString: Red
   m_Icon: {fileID: 0}

@@ -49,11 +49,11 @@ public class ElevatorController : MonoBehaviour {
         if (GoUp)
         {
             
-            Invoke("GoingUp", 1.0f);
+            Invoke("GoingUp", 0.1f);
         }
         else if (GoDown)
         {
-            Invoke("GoingDown", 1.0f);
+            Invoke("GoingDown", 0.1f);
         }
 
 

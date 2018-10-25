@@ -10,7 +10,6 @@ public class ContinueController : MonoBehaviour {
     private bool ContinueFlag = false;
     private bool GameoverFlag = false;
     private bool FirstStageFlag = false;
-    private bool SecondStageFlag = false;
     private bool LastStageFlag = false;
 
 	// Use this for initialization
@@ -38,6 +37,10 @@ public class ContinueController : MonoBehaviour {
             {
                 SceneManager.LoadScene("Stage2");
             }
+            else if (Number == 4)
+            {
+                SceneManager.LoadScene("Stage2-Boss");
+            }
           
         }
         //ゲームオーバーのフラグが立てば、タイトルへ戻る
@@ -52,17 +55,11 @@ public class ContinueController : MonoBehaviour {
             FirstStageFlag = false;
             SceneManager.LoadScene("Stage1");
         }
-        //2ndステージへのフラグが立てば、2ndステージへ。
-        else if (SecondStageFlag)
-        {
-            SecondStageFlag = false;
-            SceneManager.LoadScene("Stage2");
-        }
         //FinalStageへのフラグが立てば、FinalStageへ。(未完成の為、1stステージへ行く設定)
         else if (LastStageFlag)
         {
            LastStageFlag = false;
-            SceneManager.LoadScene("Stage1");
+            SceneManager.LoadScene("Stage2");
         }
 
     }
@@ -84,13 +81,6 @@ public class ContinueController : MonoBehaviour {
 
         //1stステージボタンが押されたら、トリガーON
         this.FirstStageFlag = true;
-    }
-
-    public void SecondBdown()
-    {
-
-        //2ndステージボタンが押されたら、トリガーON
-        this.SecondStageFlag = true;
     }
 
     public void LastBdown()

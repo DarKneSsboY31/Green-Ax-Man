@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 50276778681053564}
   - component: {fileID: 61143422094879414}
   - component: {fileID: 114927594356848604}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Ax Man Special
   m_TagString: SpecialMan
   m_Icon: {fileID: 0}

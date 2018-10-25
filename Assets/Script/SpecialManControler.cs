@@ -85,12 +85,6 @@ public class SpecialManControler : MonoBehaviour {
             Jumps = 1;
         }
 
-        //ゴールオブジェクトに当たった時、次のステージへ
-        if (collision.gameObject.tag == "Goal")
-        {
-            SceneManager.LoadScene("Stage1-Boss");
-        }
-
     }
     private void OnCollisionExit2D(Collision2D collision)
     {

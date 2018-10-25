@@ -60,7 +60,11 @@ public class AxManController : MonoBehaviour
         else if (SceneManager.GetActiveScene().name == "Stage2")
         {
             Scene = 3;
-        }//２面ボスが作れたら、この先を作成
+        }
+        else if (SceneManager.GetActiveScene().name == "Stage2-Boss")
+        {
+            Scene = 4;
+        }
 
 
         //Animatorコンポーネントの取得
@@ -312,7 +316,14 @@ public class AxManController : MonoBehaviour
         //ゴールオブジェクトに当たった時、次のステージへ
         if (collision.gameObject.tag == "Goal")
         {
-            SceneManager.LoadScene("Stage1-Boss");
+            if (Scene == 1)
+            {
+              SceneManager.LoadScene("Stage1-Boss");
+            }
+            else if (Scene == 3)
+            {
+              SceneManager.LoadScene("Stage2-Boss");
+            }
         }
     }
 

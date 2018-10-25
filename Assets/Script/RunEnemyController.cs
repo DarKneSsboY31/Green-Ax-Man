@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class RunEnemyController : MonoBehaviour {
 
+    //敵によって変える数値。これによって、走る速さを変える。
+    public int Number;
     //左、右それぞれに行くフラグ
     private bool RightFlag = false;
     private bool LeftFlag = false;
@@ -39,20 +41,41 @@ public class RunEnemyController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+        //ポーズしている間は、動かさない
+        if (Mathf.Approximately(Time.timeScale, 0f))
+        {
+            return;
+        }
+
         //落ちたら消える
         if (this.transform.position.y <= -6.0f)
         {
             Destroy(gameObject);
         }
 
-        //フラグによって進む方向を変えて進む。
+        //フラグによって進む方向を変えて進む。数字によって速さが変わる
         if (LeftFlag)
         {
-            this.transform.Translate(-0.05f, 0, 0);
+            
+            if (Number == 0)
+            {
+                this.transform.Translate(-0.05f, 0, 0);
+            }
+            else if (Number == 1)
+            {
+                this.transform.Translate(-0.1f, 0, 0);
+            }
         }
         else if (RightFlag)
         {
-            this.transform.Translate(0.05f, 0, 0);
+            if(Number == 0)
+            {
+                this.transform.Translate(0.05f, 0, 0);
+            }
+            else if (Number == 1)
+            {
+                this.transform.Translate(0.1f, 0, 0);
+            }
         }
 
         //Hpがなくなると消える

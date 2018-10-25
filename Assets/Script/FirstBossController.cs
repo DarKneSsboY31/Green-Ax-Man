@@ -43,7 +43,7 @@ public class FirstBossController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+        
         //ポーズしている間は、動かさない
         if (Mathf.Approximately(Time.timeScale, 0f))
         {
@@ -129,10 +129,14 @@ public class FirstBossController : MonoBehaviour {
         this.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);// 元に戻る
 
         yield return new WaitForSeconds(1.0f); //1秒待つ
-        
+
         // 分岐が必要
+        if (EnemyLife == 3)
+        {
+            StartCoroutine(StartFirst());//ライフ変動なしなら、このコルーチンを繰り返し
+        }
         //Hpが残2の時
-        if (EnemyLife == 2)
+        else if (EnemyLife == 2)
         {
             StartCoroutine(StartSecond());//パターン2になる
         }
