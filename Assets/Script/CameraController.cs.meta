@@ -4,9 +4,11 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - AxMan: {fileID: 1331920781089734, guid: 25b27616c5b1af0448da372b15b2c815, type: 2}
+  - Sound: {fileID: 8300000, guid: c11814008897f8443800431bc0abd882, type: 3}
+  - AxMan: {instanceID: 0}
   - SpecialMan: {fileID: 1810255873575932, guid: dfcd8cdd0ecb1354f9f5a9b6c3ccac75,
       type: 2}
+  - PauseUI: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

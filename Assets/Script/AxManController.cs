@@ -8,6 +8,14 @@ using UnityEngine.SceneManagement;
 public class AxManController : MonoBehaviour
 {
 
+    //SEの設定
+    private AudioSource audiosource;
+    public AudioClip Damage; //ダメージを受けた時のSE
+    public AudioClip DEAth; //落下死の時のSE
+    public AudioClip JumP; //ジャンプ時のSE
+    public AudioClip AxThrow; //斧を投げた時のSE
+    public AudioClip Warp; //ワープ時のSE
+
     //AxManがどのシーンにいるか、判定。これを使って、コンティニュー先を決める。何か起きた時にAxManの動きを止める
     public static int Scene;
     //斧を投げた後のインターバル
@@ -48,6 +56,9 @@ public class AxManController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        //AudioSourceコンポーネントを取得
+        audiosource = GetComponent<AudioSource>();
+
         //AxManがどのシーンにいるか判定する。
         if (SceneManager.GetActiveScene().name == "Stage1")
         {
@@ -96,7 +107,7 @@ public class AxManController : MonoBehaviour
             if (DamageTime > 1.5f)
             {
                 isDmaged = false;
-                this.gameObject.layer = LayerMask.NameToLayer("Default");
+                this.gameObject.layer = LayerMask.NameToLayer("AxMan");
                 this.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
                 DamageTime = 0;
             }
@@ -105,6 +116,8 @@ public class AxManController : MonoBehaviour
         //AxManがDeadLineを超えると、死亡、シーン移動
         if (this.transform.position.y < DeadLine)
         {
+            //音を鳴らす
+            audiosource.PlayOneShot(DEAth, 0.2f);
             Life = 0;
             Invoke("SceneMove", 1.0f);
         }
@@ -112,6 +125,7 @@ public class AxManController : MonoBehaviour
         //Lifeが1になったら、モアイの姿になる。0なら死亡、シーン移動。2以上なら普通の姿に戻る
         if (Life == 1)
         {
+
             if (this.myAnimator.GetCurrentAnimatorStateInfo(0).IsName("Base Layer.AxManDefault") || this.myAnimator.GetCurrentAnimatorStateInfo(0).IsName("Base Layer.Jump") || this.myAnimator.GetCurrentAnimatorStateInfo(0).IsName("Base Layer.Walk"))
             {
                 this.myAnimator.SetFloat("Life0", 0.9f);
@@ -123,6 +137,9 @@ public class AxManController : MonoBehaviour
         }
         else if (Life <= 0)
         {
+            //音を鳴らす
+            audiosource.PlayOneShot(DEAth, 0.3f);
+
             if (this.myAnimator.GetCurrentAnimatorStateInfo(0).IsName("Damage"))
             {
                 this.myAnimator.SetFloat("Life0", -0.1f);
@@ -177,6 +194,8 @@ public class AxManController : MonoBehaviour
         //地面に立っている時、上キー又はボタンを押されたらジャンプしアニメーションも起動
         if ((Input.GetKey(KeyCode.UpArrow) || isJBdown) && Jumps == 1)
         {
+            //音を鳴らす
+            audiosource.PlayOneShot(JumP, 0.5f);
             this.myAnimator.SetBool("Jump", true);
             this.myrigidBody.velocity = new Vector2(0, this.Jump);
         }
@@ -195,7 +214,9 @@ public class AxManController : MonoBehaviour
             //右向きの時、AxManの右側に生成
             if (interval > 0.18f && (this.myAnimator.GetCurrentAnimatorStateInfo(0).IsName("Base Layer.AxManDefault") || this.myAnimator.GetCurrentAnimatorStateInfo(0).IsName("Base Layer.Jump") || this.myAnimator.GetCurrentAnimatorStateInfo(0).IsName("Base Layer.Walk") || this.myAnimator.GetCurrentAnimatorStateInfo(0).IsName("Damage")))
             {
-                
+                //音を鳴らす
+                audiosource.PlayOneShot(AxThrow, 0.8f);
+
                 int num = Random.Range(1, 5);
                 if (num == 1)
                 {
@@ -224,6 +245,9 @@ public class AxManController : MonoBehaviour
             }
             else if (interval > 0.18f && (this.myAnimator.GetCurrentAnimatorStateInfo(0).IsName("Base Layer.Walk Re") || this.myAnimator.GetCurrentAnimatorStateInfo(0).IsName("Base Layer.Default Re") || this.myAnimator.GetCurrentAnimatorStateInfo(0).IsName("Base Layer.Jump Re") || this.myAnimator.GetCurrentAnimatorStateInfo(0).IsName("Damage Re")))
             {
+                //音を鳴らす
+                audiosource.PlayOneShot(AxThrow, 0.8f);
+
                 //斧を0.3秒ごとに生成
                 //左向きの時、AxManの左側に生成
                 int num = Random.Range(1, 5);
@@ -297,7 +321,9 @@ public class AxManController : MonoBehaviour
         //敵に触れた時
         if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "Strong Enemy" || collision.gameObject.tag == "Boss" || collision.gameObject.tag == "Strong Boss" || collision.gameObject.tag == "Last Boss")
         {
-            //攻撃をくらった判定を付け、ライフを1削る
+            //攻撃をくらった判定を付け、ライフを1削る、音も出す
+            //音を鳴らす
+            audiosource.PlayOneShot(Damage, 0.6f);
             isDmaged = true;
             Life--;
             //右向きの時、左にのけぞる
@@ -316,6 +342,9 @@ public class AxManController : MonoBehaviour
         //ゴールオブジェクトに当たった時、次のステージへ
         if (collision.gameObject.tag == "Goal")
         {
+            //音を鳴らす
+            audiosource.PlayOneShot(Warp, 0.5f);
+
             if (Scene == 1)
             {
               SceneManager.LoadScene("Stage1-Boss");

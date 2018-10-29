@@ -4,10 +4,10 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - SpecialMan: {fileID: 1810255873575932, guid: dfcd8cdd0ecb1354f9f5a9b6c3ccac75,
-      type: 2}
-  - Specialmancontroller: {fileID: 114927594356848604, guid: dfcd8cdd0ecb1354f9f5a9b6c3ccac75,
-      type: 2}
+  - Damage: {fileID: 8300000, guid: 9fab22daf7aac654285ce0e2cc0ea15d, type: 3}
+  - DEAth: {fileID: 8300000, guid: a8eac58121558f940b255b7e5d202986, type: 3}
+  - JumP: {fileID: 8300000, guid: 61bb046753d490845ac2debc26236301, type: 3}
+  - AxThrow: {fileID: 8300000, guid: 29bdc88d4bf70804984cf71c0ee9b973, type: 3}
   - RedAxPrefab: {fileID: 1657281925343732, guid: cb6da94f8a460ef48b15151bc7bfe8fb,
       type: 2}
   - BlueAxPrefab: {fileID: 1947137925657190, guid: b940c9af88d45954ba1e9d0ac0f89401,
@@ -16,7 +16,7 @@ MonoImporter:
       type: 2}
   - YellowAxPrefab: {fileID: 1195749075758882, guid: 21df3f02a6103d1488f6f4d13368f9ed,
       type: 2}
-  executionOrder: 0
+  executionOrder: -100
   icon: {instanceID: 0}
   userData: 
   assetBundleName: 

@@ -4,9 +4,8 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - AxMan: {fileID: 1331920781089734, guid: 25b27616c5b1af0448da372b15b2c815, type: 2}
-  - AxMancontroller: {fileID: 114038607287045380, guid: 25b27616c5b1af0448da372b15b2c815,
-      type: 2}
+  - DEAth: {fileID: 8300000, guid: a8eac58121558f940b255b7e5d202986, type: 3}
+  - JumP: {fileID: 8300000, guid: 61bb046753d490845ac2debc26236301, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

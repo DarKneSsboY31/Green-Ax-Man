@@ -6,6 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class ContinueController : MonoBehaviour {
 
+    //SEの設定
+    public AudioClip Sound;
+    private AudioSource audiosource;
+
     //コンティニューと、ゲームオーバーのフラグ、各ステージへ行くフラグを立てる
     private bool ContinueFlag = false;
     private bool GameoverFlag = false;
@@ -14,6 +18,8 @@ public class ContinueController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        //AudioSourceコンポーネントを取得
+        audiosource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -66,6 +72,8 @@ public class ContinueController : MonoBehaviour {
 
     public void ContineBdown() {
 
+        //音を鳴らす
+        audiosource.PlayOneShot(Sound , 0.6f);
         //コンティニューボタンが押されたら、トリガーON
         this.ContinueFlag = true;
 
@@ -73,19 +81,24 @@ public class ContinueController : MonoBehaviour {
 
     public void GameoverBdown() {
 
+        //音を鳴らす
+        audiosource.PlayOneShot(Sound, 0.6f);
         //GiveUpボタンが押されたら、トリガーON
         this.GameoverFlag = true;
     }
 
     public void FirstBdown() {
 
+        //音を鳴らす
+        audiosource.PlayOneShot(Sound, 0.6f);
         //1stステージボタンが押されたら、トリガーON
         this.FirstStageFlag = true;
     }
 
     public void LastBdown()
     {
-
+        //音を鳴らす
+        audiosource.PlayOneShot(Sound, 0.6f);
         //Finalステージボタンが押されたら、トリガーON
         this.LastStageFlag = true;
     }

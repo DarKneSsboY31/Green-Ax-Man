@@ -6,6 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class SpecialManControler : MonoBehaviour {
 
+
+    //SEの設定
+    private AudioSource audiosource;
+    public AudioClip DEAth; //落下死の時のSE
+    public AudioClip JumP; //ジャンプ時のSE
+
     //死亡ラインの設定
     private float DeadLine = -7.5f;
     //ジャンプが出来る条件
@@ -24,7 +30,10 @@ public class SpecialManControler : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-       
+
+        //AudioSourceコンポーネントを取得
+        audiosource = GetComponent<AudioSource>();
+
         //RigidBodyコンポーネントの取得
         this.myrigidBody = GetComponent<Rigidbody2D>();
 
@@ -42,6 +51,8 @@ public class SpecialManControler : MonoBehaviour {
         //SpecialManがDeadLineを超えると、死亡、シーン移動
         if (this.transform.position.y < DeadLine)
         {
+            //音を鳴らす
+            audiosource.PlayOneShot(DEAth, 0.6f);
             Invoke("SceneMove", 0.1f);
         }
 
@@ -62,8 +73,9 @@ public class SpecialManControler : MonoBehaviour {
         //地面に立っている時、上キー又はボタンを押されたらジャンプ
         if ((Input.GetKey(KeyCode.UpArrow) || isJBdown2) && Jumps == 1)
         {
+            //音を鳴らす
+            audiosource.PlayOneShot(JumP, 0.5f);
             this.myrigidBody.velocity = new Vector2(0, this.Jump);
-
         }        
 
     }

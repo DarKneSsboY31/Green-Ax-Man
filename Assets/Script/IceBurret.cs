@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class IceBurret : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
+    //SEの設定
+    private AudioSource audiosource;
+    public AudioClip Damage; //地面に当たった時のSE
+
+    // Use this for initialization
+    void Start () {
+        //AudioSourceコンポーネントを取得
+        audiosource = GetComponent<AudioSource>();
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -25,8 +31,15 @@ public class IceBurret : MonoBehaviour {
         //地面に触れた時、削除
         if (collision.gameObject.tag == "Ground")
         {
-            Destroy(gameObject);
-        }
-      
+            //音を鳴らす
+            audiosource.PlayOneShot(Damage, 0.1f);
+            Invoke("Death", 0.05f);
+        }   
+    }
+    //消滅する時の関数
+    private void Death()
+    {
+
+        Destroy(gameObject);
     }
 }

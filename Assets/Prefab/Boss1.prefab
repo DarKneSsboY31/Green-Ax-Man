@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 61068634506770924}
   - component: {fileID: 95647280551629122}
   - component: {fileID: 114496784120463534}
+  - component: {fileID: 82962181272423778}
   m_Layer: 9
   m_Name: Boss1
   m_TagString: Enemy
@@ -68,6 +69,86 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.6851513, y: 3.271398}
   m_EdgeRadius: 0
+--- !u!82 &82962181272423778
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1994469109470732}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!95 &95647280551629122
 Animator:
   serializedVersion: 3
@@ -96,6 +177,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80c183232b9213545bf19877108c6895, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Damaged: {fileID: 8300000, guid: 9fab22daf7aac654285ce0e2cc0ea15d, type: 3}
+  DEAth: {fileID: 8300000, guid: a730083f191af984c8972e7c3edc2b3c, type: 3}
+  Burret: {fileID: 8300000, guid: 9e783693de741a24e9ad0896013127b2, type: 3}
+  Dead: {fileID: 8300000, guid: 93d69d6235454704ca32e75e9c2b2d6d, type: 3}
+  IceRock: {fileID: 8300000, guid: 4aefd5351e81c42449c46f7ae8786f47, type: 3}
   ClearCanvas: {fileID: 0}
   AXMan: {fileID: 0}
   EnemyLife: 3

@@ -3,7 +3,10 @@ guid: c1f468f2b7a575344843e87d384c18e1
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - Damage: {fileID: 8300000, guid: f8472ec65be2c2946afd54866d80e5d8, type: 3}
+  - Delete: {fileID: 8300000, guid: 5eb2bfe52f7eb2147bc378886234c032, type: 3}
+  - Burret: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

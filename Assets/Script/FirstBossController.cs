@@ -4,6 +4,14 @@ using UnityEngine;
 
 public class FirstBossController : MonoBehaviour {
 
+    //SEの設定
+    private AudioSource audiosource;
+    public AudioClip Damaged; //ダメージを受けた時のSE
+    public AudioClip DEAth; //死亡の時のSE
+    public AudioClip Burret; //弾を出す時のSE
+    public AudioClip Dead; //HPが0になった時のSE
+    public AudioClip IceRock; //氷塊を出す時のSE
+
     //ポーズする画面のオブジェクトを取得
     public GameObject ClearCanvas;
     //死亡フラグ
@@ -29,6 +37,9 @@ public class FirstBossController : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+
+        //AudioSourceコンポーネントを取得
+        audiosource = GetComponent<AudioSource>();
 
         //Ax　Manのオブジェクトを取得
         AXMan = GameObject.Find("Ax Man");
@@ -131,7 +142,7 @@ public class FirstBossController : MonoBehaviour {
         yield return new WaitForSeconds(1.0f); //1秒待つ
 
         // 分岐が必要
-        if (EnemyLife == 3)
+        if (EnemyLife >= 3)
         {
             StartCoroutine(StartFirst());//ライフ変動なしなら、このコルーチンを繰り返し
         }
@@ -146,7 +157,7 @@ public class FirstBossController : MonoBehaviour {
             StartCoroutine(StartThird());//パターン3になる
         }
         //ボス戦終了時
-        else if (EnemyLife >= 0)
+        else if (EnemyLife <= 0)
         {
             StartCoroutine(StartEnd());//負ける
         }
@@ -165,6 +176,8 @@ public class FirstBossController : MonoBehaviour {
         // 「球を出して1秒待つ」を３回繰り返す
         for (int i = 0; i < 3; i++)
         {
+            //音を鳴らす
+            audiosource.PlayOneShot(Burret, 2.0f);
             GameObject Mizutama = Instantiate(AquaBurret) as GameObject;
             Mizutama.transform.position = new Vector2(this.transform.position.x - 1.0f, this.transform.position.y -0.7f);
 
@@ -179,7 +192,7 @@ public class FirstBossController : MonoBehaviour {
         yield return new WaitForSeconds(3.0f);
 
         // 繰り返しの条件が必要
-        if (EnemyLife == 3)
+        if (EnemyLife >= 3)
         {
             StartCoroutine(StartFirst());//ライフ変動なしなら、このコルーチンを繰り返し
         }
@@ -195,6 +208,9 @@ public class FirstBossController : MonoBehaviour {
         // 「球を出して0.7秒待つ」を4回繰り返す
         for (int i = 0; i < 4; i++)
         {
+            //音を鳴らす
+            audiosource.PlayOneShot(Burret, 2.0f);
+
             GameObject Mizutama = Instantiate(AquaBurret) as GameObject;
             Mizutama.transform.position = new Vector2(this.transform.position.x - 1.0f, this.transform.position.y - 0.7f);
 
@@ -210,6 +226,9 @@ public class FirstBossController : MonoBehaviour {
         // 「球を出して0.7秒待つ」を4回繰り返す
         for (int i = 0; i < 4; i++)
         {
+            //音を鳴らす
+            audiosource.PlayOneShot(Burret, 2.0f);
+
             GameObject Mizutama = Instantiate(AquaBurret) as GameObject;
             Mizutama.transform.position = new Vector2(this.transform.position.x + 1.0f, this.transform.position.y - 0.7f);
 
@@ -246,8 +265,10 @@ public class FirstBossController : MonoBehaviour {
         for (int n = 0; n < 2; n++)
         {
 
-        //大きい氷の弾を3つ、一斉に出す。
-        GameObject DekaiRe = Instantiate(IceReBurret) as GameObject;
+            //音を鳴らす
+            audiosource.PlayOneShot(IceRock, 2.0f);
+            //大きい氷の弾を3つ、一斉に出す。
+            GameObject DekaiRe = Instantiate(IceReBurret) as GameObject;
         DekaiRe.transform.position = new Vector2(-3.0f, 2.5f);
         GameObject DekaiReOne = Instantiate(IceReBurret) as GameObject;
         DekaiReOne.transform.position = new Vector2(0, 2.5f);
@@ -257,7 +278,10 @@ public class FirstBossController : MonoBehaviour {
         // 「球を出して0.4秒待つ」を5回繰り返す
         for (int i = 0; i < 5; i++)
         {
-            GameObject Mizutama = Instantiate(AquaBurret) as GameObject;
+                //音を鳴らす
+                audiosource.PlayOneShot(Burret, 2.0f);
+
+                GameObject Mizutama = Instantiate(AquaBurret) as GameObject;
             Mizutama.transform.position = new Vector2(this.transform.position.x - 1.0f, this.transform.position.y - 0.7f);
 
             yield return new WaitForSeconds(0.4f);//0.4秒待つ
@@ -270,8 +294,11 @@ public class FirstBossController : MonoBehaviour {
 
         LeftFlag = false;//フラグ消し
 
-        //大きい氷の弾を3つ、一斉に出す。
-        GameObject Dekai = Instantiate(IceBurret) as GameObject;
+            //音を鳴らす
+            audiosource.PlayOneShot(IceRock, 2.0f);
+
+            //大きい氷の弾を3つ、一斉に出す。
+            GameObject Dekai = Instantiate(IceBurret) as GameObject;
         Dekai.transform.position = new Vector2(-3.0f, 2.5f);
         GameObject DekaiOne = Instantiate(IceBurret) as GameObject;
         DekaiOne.transform.position = new Vector2(0, 2.5f);
@@ -281,10 +308,13 @@ public class FirstBossController : MonoBehaviour {
         // 「球を出して0.4秒待つ」を5回繰り返す
         for (int i = 0; i < 5; i++)
         {
-            GameObject Mizutama = Instantiate(AquaBurret) as GameObject;
+                //音を鳴らす
+                audiosource.PlayOneShot(Burret, 2.0f);
+
+                GameObject Mizutama = Instantiate(AquaBurret) as GameObject;
             Mizutama.transform.position = new Vector2(this.transform.position.x + 1.0f, this.transform.position.y - 0.7f);
 
-            yield return new WaitForSeconds(0.7f);//0.4秒待つ
+            yield return new WaitForSeconds(0.4f);//0.4秒待つ
 
         }
 
@@ -313,7 +343,14 @@ public class FirstBossController : MonoBehaviour {
     //EnemyLifeが0になった時に行う、散り際
     IEnumerator StartEnd()
     {
+        //音を鳴らす
+        audiosource.PlayOneShot(Dead, 0.8f);
         isEnd = true;//死亡フラグON
+
+        yield return new WaitForSeconds(0.1f);//0.1秒待ち
+
+        //音を鳴らす
+        audiosource.PlayOneShot(DEAth, 1.0f);
 
         yield return new WaitForSeconds(3.0f);//3秒待ち
 
@@ -326,11 +363,14 @@ public class FirstBossController : MonoBehaviour {
         this.gameObject.SetActive(false);//姿を消す
     }
 
-
+    //斧やSpecialManに当たった時、HPを１減らして、コルーチンを解除
     void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.tag == "SpecialMan" || other.gameObject.tag == "Ax" || other.gameObject.tag == "Green" || other.gameObject.tag == "Red")
         {
+            //音を鳴らす
+            audiosource.PlayOneShot(Damaged, 0.8f);
+
             isDamaged = true;
             EnemyLife--;
             StopCoroutine(StartFirst());

@@ -1,0 +1,20 @@
+fileFormatVersion: 2
+guid: 3352a43f3e373c444988bd8751564a32
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - Damaged: {fileID: 8300000, guid: 9fab22daf7aac654285ce0e2cc0ea15d, type: 3}
+  - DEAth: {fileID: 8300000, guid: 6dfdc1bbf6d9571439e3d72d0aacfd5f, type: 3}
+  - Burret: {fileID: 8300000, guid: 9e783693de741a24e9ad0896013127b2, type: 3}
+  - HPZero: {fileID: 8300000, guid: 93d69d6235454704ca32e75e9c2b2d6d, type: 3}
+  - IceRock: {fileID: 8300000, guid: 4aefd5351e81c42449c46f7ae8786f47, type: 3}
+  - ClearCanvas: {instanceID: 0}
+  - AquaBurret: {instanceID: 0}
+  - IceBurret: {instanceID: 0}
+  - IceReBurret: {instanceID: 0}
+  executionOrder: -94
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

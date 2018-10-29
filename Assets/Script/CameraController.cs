@@ -6,6 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class CameraController : MonoBehaviour {
 
+    //SEの設定
+    public AudioClip Sound;
+    private AudioSource audiosource;
+
     //ステージクリア時、タイトルに戻るフラグ
     private bool isClear = false;
     //ポーズボタンを押したときのフラグ
@@ -28,6 +32,9 @@ public class CameraController : MonoBehaviour {
         //Ax　ManとSpecialManのオブジェクトを取得
         AxMan = GameObject.Find("Ax Man");
         SpecialMan = GameObject.Find("Ax Man Special");
+
+        //AudioSourceコンポーネントを取得
+        audiosource = GetComponent<AudioSource>();
     }
 	
 	// Update is called once per frame
@@ -91,11 +98,17 @@ public class CameraController : MonoBehaviour {
     //ポーズボタンが押された時、トリガーON
     public void GetMyPauseButtonDown()
     {
+        //音を鳴らす
+        audiosource.PlayOneShot(Sound, 0.6f);
         isPauseBD = true;
+
     }
 
+    //クリア画面時、ボタンが押された時、トリガーON
     public void GetClearButtonDown()
     {
+        //音を鳴らす
+        audiosource.PlayOneShot(Sound, 0.6f);
         isClear = true;
     }
 }

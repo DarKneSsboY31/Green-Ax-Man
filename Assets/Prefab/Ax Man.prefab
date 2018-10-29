@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 50858431462376434}
   - component: {fileID: 61379149957918452}
   - component: {fileID: 114616957944033152}
+  - component: {fileID: 82596389976451880}
   m_Layer: 12
   m_Name: Ax Man
   m_TagString: AxMan
@@ -89,6 +90,86 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.35529572, y: 0.5166279}
   m_EdgeRadius: 0
+--- !u!82 &82596389976451880
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1254089889317768}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!95 &95921725641212750
 Animator:
   serializedVersion: 3
@@ -117,6 +198,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2854d589dd42c8d48ae26b1c6882c303, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Damage: {fileID: 8300000, guid: 9fab22daf7aac654285ce0e2cc0ea15d, type: 3}
+  DEAth: {fileID: 8300000, guid: a8eac58121558f940b255b7e5d202986, type: 3}
+  JumP: {fileID: 8300000, guid: 61bb046753d490845ac2debc26236301, type: 3}
+  AxThrow: {fileID: 8300000, guid: 29bdc88d4bf70804984cf71c0ee9b973, type: 3}
+  Warp: {fileID: 8300000, guid: 1a7a005812f1c034f96170ebcc769d61, type: 3}
   Life: 3
   RedAxPrefab: {fileID: 1657281925343732, guid: cb6da94f8a460ef48b15151bc7bfe8fb,
     type: 2}
